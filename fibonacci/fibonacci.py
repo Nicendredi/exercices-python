@@ -99,37 +99,54 @@ if combiner(1, 1):
         combiner(['a', 'b'], ['%', '%', '%']))
     print()
 
+fibo = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987]
+
 if afficherFibo(-1):
     print("afficherFibo(0) =", end=' ')
     afficherFibo(0)
+    print("devrait afficher :", fibo[0])
     print("afficherFibo(1) =", end=' ')
     afficherFibo(1)
+    print("devrait afficher :", fibo[1])
     print("afficherFibo(5) =", end=' ')
     afficherFibo(5)
+    print("devrait afficher :", fibo[5])
     print("afficherFibo(-5) =", end=' ')
     afficherFibo(-5)
+    print("devrait afficher :", 0)
     print()
 
 if listeFibo(0):
     print("listeFibo(0) =", listeFibo(0))
+    print("devrait afficher :", fibo[0])
     print("listeFibo(5) =", listeFibo(5))
+    print("devrait afficher :", fibo[0:6])
     print("listeFibo(7) =", listeFibo(7))
+    print("devrait afficher :", fibo[0:8])
     print()
 
 if verifierFibo([]):
     print("verifierFibo([1,1,2,3,5]) =", verifierFibo([1, 1, 2, 3, 5]))
+    print("devrait afficher :", fibo[0:5] == [1, 1, 2, 3, 5])
     print("verifierFibo([0,1,2,3,5]) =", verifierFibo([0, 1, 2, 3, 5]))
+    print("devrait afficher :", fibo[0:5] == [0, 1, 2, 3, 5])
     print("verifierFibo([1,1,2,3,4]) =", verifierFibo([1, 1, 2, 3, 4]))
+    print("devrait afficher :", fibo[0:5] == [1, 1, 2, 3, 4])
     print("verifierFibo([8,1,3,2,5,1]) =", verifierFibo([8, 1, 3, 2, 5, 1]))
+    print("devrait afficher :", fibo[0:56] == [8, 1, 3, 2, 5, 1])
     print()
 
 if elementNonFibo([]):
     print("elementNonFibo([1,1,2,3,5]) =", elementNonFibo([1, 1, 2, 3, 5]))
+    print("devrait afficher : Null")
     print("elementNonFibo([0,1,2,3,5]) =", elementNonFibo([0, 1, 2, 3, 5]))
+    print("devrait afficher : 0")
     print("elementNonFibo([1,1,2,3,4]) =", elementNonFibo([1, 1, 2, 3, 4]))
+    print("devrait afficher : 4")
     print(
         "elementNonFibo([8,1,3,2,5,1]) =",
         elementNonFibo([8, 1, 3, 2, 5, 1]))
+    print("devrait afficher : 8")
     print()
 
 # ----------------
@@ -183,15 +200,19 @@ def afficheTriangleFibo(n):
 # ----------------
 
 
-if estFibo([]):
+if estFibo([1]):
     print("estFibo([1,1,2,3,5])", estFibo([1, 1, 2, 3, 5]))
+    print("devrait afficher : True")
     print("estFibo([0,1,2,3,5])", estFibo([0, 1, 2, 3, 5]))
+    print("devrait afficher : False")
     print("estFibo([1,1,2,3,4])", estFibo([1, 1, 2, 3, 4]))
+    print("devrait afficher : False")
     print("estFibo([8,1,3,2,5,1])", estFibo([8, 1, 3, 2, 5, 1]))
+    print("devrait afficher : True")
     print()
 
 
-if afficheTriangleListeFibo([]):
+if afficheTriangleListeFibo([1]):
     print(
         "afficheTriangleListeFibo([1,1,2,3,5])",
         afficheTriangleListeFibo([1, 1, 2, 3, 5]))
