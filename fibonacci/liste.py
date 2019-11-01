@@ -1,15 +1,68 @@
 import random
 
 
+def ajouteDansListe(liste, valeur):
+    return liste.append(valeur)
+
+
+def genererNombreBorne(min, max):
+    return random.randrange(min, max)
+
+
 def genererListeBornee(nb, min, max):
     # Créé une liste de 'nb' éléments tous compris entre 'min' et 'max'
-    pass
+    liste = []
+    for i in range(nb):
+        ajouteDansListe(liste, genererNombreBorne(min, max))
+    return liste
 
 
 def genererListeUniqueBornee(nb, min, max):
     # Créé une liste de 'nb' éléments tous compris entre 'min' et 'max' sans
     # doublons
-    pass
+    liste = []
+    for i in range(nb):
+        valeur = genererNombreBorne(min, max)
+        unique = False
+        while not unique:
+            unique = True
+            for val in liste:
+                if val == valeur:
+                    unique = False
+                    valeur = genererNombreBorne(min, max)
+                    break
+        ajouteDansListe(liste, valeur)
+    return liste
+
+
+# -----------------------
+# Tests de génération de liste
+# -----------------------
+
+print(genererListeBornee(0, 0, 0))
+if genererListeBornee(0, 0, 0):
+    liste = genererListeBornee(20, 0, 100)
+    print("\n")
+    print(liste)
+    if len(liste) != len(set(liste)):
+        print("Doublons trouvés ! Voici la liste ordonnée")
+        liste.sort()
+        print(liste)
+
+
+if genererListeUniqueBornee(0, 0, 0):
+    liste = genererListeUniqueBornee(20, 0, 100)
+    print("\n")
+    print(liste)
+    if len(liste) != len(set(liste)):
+        print("Doublons trouvés ! Voici la liste ordonnée")
+        liste.sort()
+        print(liste)
+
+
+# -----------------------
+# Fin des tests de génération de liste
+# -----------------------
 
 
 def compareListes(l1, l2):
