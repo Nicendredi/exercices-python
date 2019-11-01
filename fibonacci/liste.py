@@ -39,8 +39,7 @@ def genererListeUniqueBornee(nb, min, max):
 # Tests de génération de liste
 # -----------------------
 
-print(genererListeBornee(0, 0, 0))
-if genererListeBornee(0, 0, 0):
+if genererListeBornee(1, 0, 1):
     liste = genererListeBornee(20, 0, 100)
     print("\n")
     print(liste)
@@ -50,7 +49,7 @@ if genererListeBornee(0, 0, 0):
         print(liste)
 
 
-if genererListeUniqueBornee(0, 0, 0):
+if genererListeUniqueBornee(1, 0, 1):
     liste = genererListeUniqueBornee(20, 0, 100)
     print("\n")
     print(liste)
