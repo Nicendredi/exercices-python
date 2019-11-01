@@ -99,10 +99,15 @@ if combiner(1, 1):
         combiner(['a', 'b'], ['%', '%', '%']))
     print()
 
-if afficherFibo(0):
-    print("afficherFibo(0) =", afficherFibo(0))
-    print("afficherFibo(1) =", afficherFibo(1))
-    print("afficherFibo(5) =", afficherFibo(5))
+if afficherFibo(-1):
+    print("afficherFibo(0) =", end=' ')
+    afficherFibo(0)
+    print("afficherFibo(1) =", end=' ')
+    afficherFibo(1)
+    print("afficherFibo(5) =", end=' ')
+    afficherFibo(5)
+    print("afficherFibo(-5) =", end=' ')
+    afficherFibo(-5)
     print()
 
 if listeFibo(0):
