@@ -13,12 +13,43 @@ from liste import *
 
 
 def combiner(objet1, objet2):
-    # renvoie la somme des deux objets. Cette fonction pourra être
-	# utilisé comme une addition ou pour concaténer deux objets
-	# (liste, chaine de caractères...)
-    pass
-​
-​
+    # Cette fonction sert à être sûr qu'on peut combiner deux objets qu'ils
+    # soient deux nombres, deux chqines de carqctère ou deux listes. On pourra
+    # rajouter des cas au fur et à mesure
+    if not isinstance(objet1, type(objet2)):
+        # Beaucoup de languages ont une fonction similaire pour tester le type
+        return False
+
+    if isinstance(objet1, type(1)):
+        # sont des nombres ?
+        return objet1 + objet2
+        # Addition
+
+    elif isinstance(objet1, type("")):
+        # sont des chaînes de caractère ?
+        res = ""
+        # Création d'une nouvelle chaîne
+        for char in objet1:
+            res = res + char
+            # On ajoute les caractères de objet1
+        for char in objet2:
+            res = res + char
+            # On ajoute les caractères de objet2
+        return res
+
+    elif isinstance(objet1, type([])):
+        # sont des listes ?
+        res = []
+        for valeur in objet1:
+            res.append(valeur)
+            # On ajoute les valeurs de objet1
+        for valeur in objet2:
+            res.append(valeur)
+            # On ajoute les valeurs de objet2
+        return res
+    return True
+
+
 def afficherFibo(n):
     # Affiche la valeur de la suite de fibonacci à la position n et
     # renvoie True.
@@ -38,8 +69,8 @@ def afficherFibo(n):
 
 
 def listeFibo(n):
-    # Créé une suite de Fibonacci jusqu'à n, organisé sous la forme d'une liste,
-    # puis renvoie cette liste.
+    # Créé une suite de Fibonacci jusqu'à n, organisé sous la forme d'une
+    # liste, puis renvoie cette liste.
     pass
 
 
