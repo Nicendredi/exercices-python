@@ -1,3 +1,6 @@
+import random
+
+
 def genererListeBornee(nb, min, max):
     # Créé une liste de 'nb' éléments tous compris entre 'min' et 'max'
     pass
